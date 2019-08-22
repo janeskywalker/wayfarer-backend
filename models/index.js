@@ -11,7 +11,7 @@ mongoose.connect(DB_URL, {
 
 module.exports = {
   User: require('./User'),
-  Post: require('.Post'),
-  Comment: require('.Comment'),
-  City: require('.City'),
+  Post: require('./Post'),
+  Comment: require('./Comment'),
+  City: require('./City'),
 };
