@@ -4,6 +4,6 @@ const ctrl = require('../controllers');
 const authRequired = require('../middleware/authRequired');
 
 // show one 
-// router.get('/:id', authRequired, ctrl.users.show);
+router.get('/:id', authRequired, ctrl.users.show);
 
-// module.exports = router;
+module.exports = router;

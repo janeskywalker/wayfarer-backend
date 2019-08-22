@@ -45,7 +45,7 @@ app.get('/', (req, res) => res.send('<h1>Welcome to wayfare API</h1>'));
 app.use('/api/v1/auth', routes.auth);
 
 // Users Routes
-// app.use('/api/v1/users', routes.users);
+app.use('/api/v1/users', routes.users);
 
 // Contacts Routes
 // app.use('/api/v1/cities', routes.cities);
