@@ -11,6 +11,17 @@ const index = (req, res) => {
     
 }
 
+const show = (req, res) => {
+  console.log('requesting one city')
+  db.City.findById(req.params.id, (error, foundCity) => {
+    if (error) return response.sendErrorResponse(res, error);
+    // response.sendResponse(res, foundPokemons);
+    res.send(foundCity)
+    });
+}
+
+
 module.exports = {
   index,
+  show
 };
