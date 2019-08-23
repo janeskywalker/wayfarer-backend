@@ -17,9 +17,26 @@ const createPost = (req, res) => {
         if (err) return res.status(500).json({ status: 500, message: err});
         res.send(savedPost)
     });
-
 }
 
+const deletePost = (req, res) => {
+    db.Post.findByIdAndDelete(req.params.id, (err, deletedPost) =>{
+        console.log('deleting post')
+        if (err) return res.status(500).json({ status: 500, message: err});
+        res.send(deletedPost)
+    })
+
+} 
+
+
+
+
+
+
+
+
+
 module.exports = {
-  createPost
+  createPost,
+  deletePost
 };
