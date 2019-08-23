@@ -7,7 +7,7 @@ const createPost = (req, res) => {
 
     const newPost = {
         title: req.body.title,
-        author: req.body.author,
+        User: req.session.currentUser.id,
         content: req.body.content,
         City: cityId,
       }
