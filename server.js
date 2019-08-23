@@ -4,7 +4,7 @@ const session = require('express-session');
 const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 4000;
-// const routes = require('./routes');
+const routes = require('./routes');
 
 // ---------------------------------------- MIDDLEWARE ---------------------------------------- //
 
@@ -42,13 +42,18 @@ app.use(cors(corsOptions));
 app.get('/', (req, res) => res.send('<h1>Welcome to wayfare API</h1>'));
 
 // Auth Routes
-// app.use('/api/v1/auth', routes.auth);
-
-// Contacts Routes
-// app.use('/api/v1/contacts', routes.contacts);
+app.use('/api/v1/auth', routes.auth);
 
 // Users Routes
-// app.use('/api/v1/users', routes.users);
+app.use('/api/v1/users', routes.users);
+
+// City Routes
+app.use('/api/v1/cities', routes.cities);
+
+// Post Routes
+app.use('/api/v1/posts', routes.posts);
+
+
 
 
 // ---------------------------------------- START SERVER ---------------------------------------- //
