@@ -47,8 +47,11 @@ app.use('/api/v1/auth', routes.auth);
 // Users Routes
 app.use('/api/v1/users', routes.users);
 
-// Contacts Routes
+// City Routes
 app.use('/api/v1/cities', routes.cities);
+
+// Post Routes
+app.use('/api/v1/posts', routes.posts);
 
 
 

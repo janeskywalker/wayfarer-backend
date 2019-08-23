@@ -10,13 +10,9 @@ const postSchema = new Schema({
         type: String,
     },
 
-	comment: [
-		{
-			type: Schema.Types.ObjectId,
-			// collection 
-			ref: 'Comment'
-		}
-    ],
+    content: {
+        type: String,
+    },
     
     create_date: {
         type: Date,
@@ -27,6 +23,11 @@ const postSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'City'
     },
+
+    likeCount: {
+        type: Number,
+        default: 0
+    }
 
 });
 
