@@ -36,9 +36,12 @@ const register = (req, res) => {
 
         // now another query to create a user and save it
         db.User.create(newUser, (err, savedUser) => {
-          if (err) return res.status(500).json({ status: 500, message: err});
-          res.status(201).json({ status: 201, message: 'success' });
-          // res.send(savedUser)
+          // if (err) return res.status(500).json({ status: 500, message: err});
+          if (err) res.send(err)
+          console.log('registering user')
+          console.log(savedUser)
+          // res.status(201).json({ status: 201, message: 'success', savedUser: savedUser});
+          res.send(savedUser)
         });
       });
     });
@@ -49,6 +52,7 @@ const register = (req, res) => {
 
 // POST Login Route
 const login = (req, res) => {
+  console.log('logging in on server')
   if (!req.body.email || !req.body.password) {
     return res.status(400).json({ status: 400, message: 'Please enter your email and password' });
   }
@@ -67,7 +71,9 @@ const login = (req, res) => {
         // give permission, authorization
         req.session.loggedIn = true;
         req.session.currentUser = { id: foundUser._id };
-        return res.status(200).json({ status: 200, message: 'Success', id: foundUser._id  });
+        
+        // return res.status(200).json({ status: 200, message: 'Success', id: foundUser._id  });
+        return res.send(foundUser)
       } else {
         return res.status(400).json({ status: 400, message: 'Username or password is incorrect' });
       }

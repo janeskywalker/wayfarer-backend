@@ -28,6 +28,27 @@ const deletePost = (req, res) => {
 
 } 
 
+const userPosts = (req, res) => {
+    console.log('getting user post')
+    db.Post.find({User: req.params.userId}, (error, foundPosts) => {
+        if (error) return response.sendErrorResponse(res, error);
+        console.log({foundPosts})
+        // response.sendResponse(res, foundCities);
+        res.send(foundPosts)
+    });
+}
+
+
+const userPosts = (req, res) => {
+    console.log('getting user post')
+    db.Post.find({User: req.params.userId}, (error, foundPosts) => {
+        if (error) return response.sendErrorResponse(res, error);
+        console.log({foundPosts})
+        // response.sendResponse(res, foundCities);
+        res.send(foundPosts)
+    });
+}
+
 
 
 
@@ -38,5 +59,6 @@ const deletePost = (req, res) => {
 
 module.exports = {
   createPost,
-  deletePost
+  deletePost,
+  userPosts
 };
