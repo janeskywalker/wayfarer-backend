@@ -34,18 +34,18 @@ const userPosts = (req, res) => {
         if (error) return response.sendErrorResponse(res, error);
         console.log({foundPosts})
         // response.sendResponse(res, foundCities);
-        res.send(foundPosts)
+        res.send(foundPosts.reverse())
     });
 }
 
 
-const userPosts = (req, res) => {
-    console.log('getting user post')
-    db.Post.find({User: req.params.userId}, (error, foundPosts) => {
+const cityPosts = (req, res) => {
+    console.log('getting city post')
+    db.Post.find({City: req.params.cityId}, (error, foundPosts) => {
         if (error) return response.sendErrorResponse(res, error);
         console.log({foundPosts})
         // response.sendResponse(res, foundCities);
-        res.send(foundPosts)
+        res.send(foundPosts.reverse())
     });
 }
 
@@ -60,5 +60,6 @@ const userPosts = (req, res) => {
 module.exports = {
   createPost,
   deletePost,
-  userPosts
+  userPosts,
+  cityPosts
 };
