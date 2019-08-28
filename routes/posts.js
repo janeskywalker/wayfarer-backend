@@ -9,4 +9,11 @@ router.post('/', authRequired, ctrl.posts.createPost)
 // delete a post
 router.delete('/:id', authRequired, ctrl.posts.deletePost)
 
+// post index -- get all post
+router.get('/userposts/:userId', authRequired, ctrl.posts.userPosts)
+
+router.get('/cityposts/:cityId', authRequired, ctrl.posts.cityPosts)
+
+
+
 module.exports = router;
