@@ -30,7 +30,7 @@ app.use(session({
 
 // cors - cross regin origin 
 const corsOptions = {
-  origin: ['http://localhost:3000'], // string or array --  this is where the frontend is gonna call the route on this port
+  origin: ['https://wayfarer-react-app.herokuapp.com','http://localhost:3000'], // string or array --  this is where the frontend is gonna call the route on this port
   credentials: true, // This allows the session cookie to be sent back and forth
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
