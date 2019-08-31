@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const DB_URL = process.env.MONGODB_URI || 'mongodb://localhost:27017/auth-api-sei3';
-    
+//const DB_URL = process.env.MONGODB_URI || 'mongodb://localhost:27017/wayfarer-backend';
+    const DB_URL = 'mongodb://localhost:27017/wayfarer-backend';
 
 mongoose.connect(DB_URL, {
   useNewUrlParser: true,
